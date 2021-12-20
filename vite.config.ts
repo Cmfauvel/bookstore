@@ -53,7 +53,7 @@ const config: UserConfig = {
     }),
     Checker({
       typescript: true,
-      overlay: true,
+      overlay: false,
       eslint: {
         files: 'src',
         extensions: ['.ts', '.tsx']

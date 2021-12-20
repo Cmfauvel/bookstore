@@ -1,37 +1,18 @@
-import { FC } from 'react'
-import { Link, Slider, styled } from '@mui/material'
+import { FC, ReactElement } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import Header from '@/header'
+import { Home } from './pages/Home/Home'
+import { Book } from './pages/Book/Book'
 
-const App: FC = () => {
+const App: FC = (): ReactElement => {
   return (
-    <Root>
-      <Header />
-      <div>
-        <h2>
-          How much do you like{' '}
-          <Link href='https://vitejs.dev/' target='_blank' rel='noopener noreferrer'>
-            Vite?
-          </Link>
-        </h2>
-        <Slider />
-      </div>
-    </Root>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/:id' element={<Book />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
-
-const Root = styled('div')`
-  padding: 1% 2% 10vh 2%;
-  width: 100%;
-  min-height: 95vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  & a {
-    text-decoration: none;
-    color: ${({ theme: { palette } }) => palette.primary.main};
-  }
-`
 
 export default App

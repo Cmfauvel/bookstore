@@ -16,7 +16,7 @@ export const ThemeProvider: FC = ({ children }) => {
   )
 }
 
-const brandColor = '#00b8d4'
+const brandColor = '#303738'
 const createThemeHelper = (theme: 'dark' | 'light') => {
   const isDark = theme === 'dark'
   return createTheme({
@@ -35,6 +35,9 @@ const createThemeHelper = (theme: 'dark' | 'light') => {
       success: {
         main: 'rgb(76,175,80)'
       }
+    },
+    typography: {
+      fontFamily: ['Roboto'].join(',')
     }
   })
 }
