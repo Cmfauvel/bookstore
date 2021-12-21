@@ -3,12 +3,13 @@ import Header from '../partials/Header/Header'
 import TabsComp from '@/components/Tabs/Tabs'
 import Carousel from '@/components/Carousel/Carousel'
 import { Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material'
+import RightPanel from '@/components/RightPanel/RightPanel'
 
 export const Home = () => {
   return (
     <div>
       <Header />
-      <Box component='div' sx={{ display: 'flex', padding: '10px 2px', gap: 5 }}>
+      <Box component='div' sx={{ display: 'flex', padding: '10px 2px', gap: '15px' }}>
         <Box component='div' sx={{ width: '60%' }}>
           <TabsComp />
           <Box sx={{ paddingTop: 5 }}>
@@ -16,10 +17,7 @@ export const Home = () => {
             <Carousel />
           </Box>
         </Box>
-        <Box component='div' sx={{ width: '40%', backgroundColor: 'red' }}>
-          {' '}
-          right panel
-        </Box>
+        <RightPanel />
       </Box>
     </div>
   )
